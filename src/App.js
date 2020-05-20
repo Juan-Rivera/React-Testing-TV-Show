@@ -8,7 +8,7 @@ import {fetchShow } from './api/fetchShow';
 import Episodes from "./components/Episodes";
 import "./styles.css";
 
-const url = "https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes"
+
 
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("");
   const episodes = seasons[selectedSeason] || [];
-
+  const url = "https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes"
   // useEffect(() => {
   //   export const fetchShow = () => {
   //     axios
@@ -30,11 +30,12 @@ export default function App() {
   //   };
   //   fetchShow();
   // }, []);
-
+  //console.log(`fetchShow: ${fetchShow}`)
   useEffect(() => {
     fetchShow(url)
       .then(res => {
         setShow(res.data)
+        console.log(res)
         setSeasons(formatSeasons(res.data._embedded.episodes))
       })
   }, []);
