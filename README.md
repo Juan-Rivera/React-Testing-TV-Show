@@ -1,5 +1,5 @@
 # React Testing TV Show
-
+initial push request :)
 ## Advanced Web Applications ➡ Testing React
 
 ### Objectives
@@ -60,7 +60,7 @@ export const fetchShow = () => {
 }
   
  // App.js
-useEffect(() => {
+useEffect(() => { 
   fetchShow
     .then(res => {
       // set state with the data
